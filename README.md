@@ -1,4 +1,6 @@
-Vakıfbank POS Envanter Yönetim Sistemi
+Vakıfbank POS Envanter Yönetim Sistemi⭐️⭐️
+
+
 Bu proje, Vakıfbank'taki 20 günlük zorunlu stajım sırasında Ödeme Sistemleri Uygulama Geliştirme Müdürlüğü’nde geliştirilmiştir. Projenin amacı, test POS cihazları için kapsamlı bir envanter yönetim sistemi oluşturmaktır. Bu sistem, cihazların detaylarını, ödünç verilme bilgilerini, iade durumlarını ve cihazların arıza/aktif durumu gibi bilgileri takip edebilmektedir.
 
 Özellikler
