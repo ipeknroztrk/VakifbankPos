@@ -21,7 +21,7 @@ POS cihazlarının ve personelin tüm CRUD (Create, Read, Update, Delete) işlem
 Hangi personelin hangi cihazı ne zaman aldığını detaylı olarak izleyebilir ve gerektiğinde raporlayabilirsiniz.
 Kullanıcı Dostu Arayüz: .NET Core MVC kullanılarak geliştirilen sistem, kullanıcıların kolayca POS cihazlarını ve personeli yönetmesini sağlayan temiz ve verimli bir arayüz sunar.
 
-Teknoloji Yığını
+
 Backend: .NET Core MVC
 Veritabanı: PostgreSQL
 Frontend: Bootstrap, HTML, CSS
