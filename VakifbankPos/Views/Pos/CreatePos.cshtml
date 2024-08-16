@@ -1,0 +1,118 @@
+﻿@model VakifbankPos.DAL.Entities.PosInventory
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container mt-5 pt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">POS Ekleme Alanı</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" action="@Url.Action("CreatePos", "Pos")">
+
+                    <div class="mb-3">
+                        <label for="PosMember" class="form-label">POS Üye</label>
+                        <input type="text" class="form-control" id="PosMember" name="PosMember" value="@Model?.PosMember" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Terminal" class="form-label">Terminal</label>
+                        <input type="text" class="form-control" id="Terminal" name="Terminal" value="@Model?.Terminal" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="SerialNumber" class="form-label">Seri Numarası</label>
+                        <input type="text" class="form-control" id="SerialNumber" name="SerialNumber" value="@Model?.SerialNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="LastIssuedTo" class="form-label">En Son Kime Verildi</label>
+                        <input type="text" class="form-control" id="LastIssuedTo" name="LastIssuedTo" value="@Model?.LastIssuedTo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="IssueDate" class="form-label">Veriliş Tarihi</label>
+                        <input type="date" class="form-control" id="IssueDate" name="IssueDate" value="@Model?.IssueDate?.ToString("yyyy-MM-dd")" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Environment" class="form-label">Ortam</label>
+                        <input type="text" class="form-control" id="Environment" name="Environment" value="@Model?.Environment" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Vendor" class="form-label">Vendor</label>
+                        <input type="text" class="form-control" id="Vendor" name="Vendor" value="@Model?.Vendor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Model" class="form-label">Model</label>
+                        <input type="text" class="form-control" id="Model" name="Model" value="@Model?.Model" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="OwnerBank" class="form-label">Sahip Banka</label>
+                        <input type="text" class="form-control" id="OwnerBank" name="OwnerBank" value="@Model?.OwnerBank" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="PosType" class="form-label">POS Tipi</label>
+                        <input type="text" class="form-control" id="PosType" name="PosType" value="@Model?.PosType" required>
+                    </div>
+                    <button type="submit" class="btn btn-vakifbank-primary">Ekle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<style>
+    body {
+        background-color: #f7f7f7;
+        color: #333;
+    }
+
+    .container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .card {
+        border: 1px solid #f1c40f; 
+    }
+
+    .card-header {
+        background-color: #f1c40f;
+        color: #000; 
+    }
+
+    h4.card-title {
+        margin: 0;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .btn-vakifbank-primary {
+        background-color: #f1c40f;
+        border: none;
+        color: #333; 
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+        .btn-vakifbank-primary:hover {
+            background-color: #f39c12; 
+        }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+        .form-control:focus {
+            border-color: #f1c40f;
+            box-shadow: none;
+        }
+</style>

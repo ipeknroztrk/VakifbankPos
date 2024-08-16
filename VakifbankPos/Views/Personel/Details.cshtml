@@ -1,0 +1,98 @@
+﻿@model VakifbankPos.DAL.Entities.PosReceiver
+
+@{
+    ViewBag.Title = "Personel Detayları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 vakifbank-personel-details">
+    <div class="personel-name-bg text-center mb-4">
+        <h2>@Model.Name @Model.Surname</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="@Model.ImageUrl" alt="Personel Fotoğrafı" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+           
+        </div>
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">Ad:</dt>
+                        <dd class="col-sm-8">@Model.Name</dd>
+
+                        <dt class="col-sm-4">Soyad:</dt>
+                        <dd class="col-sm-8">@Model.Surname</dd>
+
+                        <dt class="col-sm-4">Telefon:</dt>
+                        <dd class="col-sm-8">@Model.PhoneNumber</dd>
+
+                        <dt class="col-sm-4">Email:</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4">Sicil Numarası:</dt>
+                        <dd class="col-sm-8">@Model.IdentificationNumber</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="@Url.Action("Index", "Personel")" class="personel-name-bg">Geri</a>
+    </div>
+</div>
+
+<style>
+    .vakifbank-personel-details {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .personel-name-bg {
+        background-color: rgb(252, 191, 50) ;
+        border: none;
+        font-weight: bold;
+        padding: 15px;
+        color:#fff
+    }
+
+        .personel-name-bg h2 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+    .vakifbank-personel-details .card {
+        background-color: #f7f7f7;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .vakifbank-personel-details dt {
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .vakifbank-personel-details dd {
+        margin-bottom: 10px;
+        color: #333333;
+    }
+
+    .btn-vakifbank-primary {
+        background-color: #f7e04b;
+        color: #000000;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-vakifbank-primary:hover {
+            background-color: #e6d04a;
+        }
+</style>

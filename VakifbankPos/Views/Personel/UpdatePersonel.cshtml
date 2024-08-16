@@ -1,0 +1,81 @@
+﻿@model VakifbankPos.DAL.Entities.PosReceiver
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container mt-5 pt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Personel Güncelleme Alanı</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" action="@Url.Action("UpdatePersonel", "Personel")">
+                    <input type="hidden" asp-for="PosReceiverId" />
+
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Ad</label>
+                        <input type="text" class="form-control" id="Name" name="Name" value="@Model?.Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Surname" class="form-label">Soyad</label>
+                        <input type="text" class="form-control" id="Surname" name="Surname" value="@Model?.Surname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" value="@Model?.Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="PhoneNumber" class="form-label">Telefon Numarası</label>
+                        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model?.PhoneNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="IdentificationNumber" class="form-label">Sicil Numarası</label>
+                        <input type="text" class="form-control" id="IdentificationNumber" name="IdentificationNumber" value="@Model?.IdentificationNumber" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-vakifbank-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<style>
+    .card {
+        border: 1px solid #f7e04b; 
+    }
+
+    .card-header {
+        background-color: #f7e04b;
+        color: #000; 
+    }
+
+    .card-body {
+        background-color: #fff;
+    }
+
+    .form-control {
+        border: 1px solid #f7e04b;
+        box-shadow: none;
+    }
+
+        .form-control:focus {
+            border-color: #d99200;
+            box-shadow: none; 
+        }
+
+    .btn-vakifbank-primary {
+        background-color: #f7e04b;
+        color: #000;
+        border: none; 
+        transition: background-color 0.3s; 
+    }
+
+        .btn-vakifbank-primary:hover {
+            background-color: #d99200; 
+        }
+</style>

@@ -1,0 +1,48 @@
+﻿@model VakifbankPos.Models.PosActionViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mb-4">POS Ödünç Al</h2>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-warning text-white">
+            <h5 class="card-title">POS Ödünç Al</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="BorrowPos" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="PosId" class="form-label">POS ID</label>
+                    <input asp-for="PosId" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="IssueDate" class="form-label">Veriliş Tarihi</label>
+                    <input asp-for="IssueDate" class="form-control" type="date" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="PosReceiverId" class="form-label">Personel Seçin</label>
+                    <select asp-for="PosReceiverId" class="form-control" asp-items="ViewBag.PersonnelList"></select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-custom-yellow">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-custom-yellow {
+        background-color: #ffbb31;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        color: black;
+    }
+
+        .btn-custom-yellow:hover {
+            background-color: #e0a800;
+        }
+</style>

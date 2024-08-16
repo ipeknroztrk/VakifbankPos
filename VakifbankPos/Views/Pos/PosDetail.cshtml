@@ -1,0 +1,143 @@
+﻿@model VakifbankPos.DAL.Entities.PosInventory
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container mt-5 pt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">POS Detayları</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">POS ID</dt>
+                    <dd class="col-sm-9">@Model.PosId</dd>
+
+                    <dt class="col-sm-3">POS Üyesi</dt>
+                    <dd class="col-sm-9">@Model.PosMember</dd>
+
+                    <dt class="col-sm-3">Terminal</dt>
+                    <dd class="col-sm-9">@Model.Terminal</dd>
+
+                    <dt class="col-sm-3">Seri Numarası</dt>
+                    <dd class="col-sm-9">@Model.SerialNumber</dd>
+
+                    <dt class="col-sm-3">Son Verildiği Kişi</dt>
+                    <dd class="col-sm-9">@Model.LastIssuedTo</dd>
+
+                    <dt class="col-sm-3">Veriliş Tarihi</dt>
+                    <dd class="col-sm-9">@Model.IssueDate?.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-3">Ortam</dt>
+                    <dd class="col-sm-9">@Model.Environment</dd>
+
+                    <dt class="col-sm-3">Tedarikçi Firma</dt>
+                    <dd class="col-sm-9">@Model.Vendor</dd>
+
+                    <dt class="col-sm-3">Model</dt>
+                    <dd class="col-sm-9">@Model.Model</dd>
+
+                    <dt class="col-sm-3">Sahip Banka</dt>
+                    <dd class="col-sm-9">@Model.OwnerBank</dd>
+
+                    <dt class="col-sm-3">POS Tipi</dt>
+                    <dd class="col-sm-9">@Model.PosType</dd>
+
+                    <dt class="col-sm-3">Arızalı mı?</dt>
+                    <dd class="col-sm-9">@(Model.IsDefective ? "Evet" : "Hayır")</dd>
+                </dl>
+
+                <form asp-action="UpdateDefectiveStatus" method="post">
+                    <input type="hidden" name="posId" value="@Model.PosId" />
+                    <div class="form-group">
+                        <label for="IsDefective">Arızalı mı?</label>
+                        <select class="form-control" id="IsDefective" name="isDefective">
+                            <option value="true">Evet</option>
+                            <option value="false" selected>Hayır</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-vakifbank-primary">Güncelle</button>
+                    <div class="mt-3">
+                        <a asp-action="Index" class="btn btn-vakifbank-primary">Geri Dön</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<style>
+    body {
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    .container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .card {
+        border: 1px solid #f1c40f; 
+    }
+
+    .card-header {
+        background-color: #f1c40f;
+        color: #000; 
+    }
+
+    .card-body {
+        background-color: #fff;
+
+    .heading {
+        color: #f1c40f;
+        margin-bottom: 20px;
+    }
+
+    dl.row {
+        margin-bottom: 20px;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #333;
+    }
+
+    dd {
+        margin-bottom: 10px;
+    }
+
+    .btn-vakifbank-primary {
+        background-color: #f1c40f; 
+        border: none;
+        color: #333;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+        .btn-vakifbank-primary:hover {
+            background-color: #f39c12; 
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+        .form-control:focus {
+            border-color: #f1c40f;
+            box-shadow: none;
+        }
+</style>

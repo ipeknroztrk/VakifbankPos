@@ -1,0 +1,40 @@
+﻿@model VakifbankPos.DAL.Entities.PosInventory
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Pos Sil</h1>
+
+<h3>Bu POS kaydını silmek istediğinizden emin misiniz?</h3>
+
+<div>
+    <h4>Pos Bilgileri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+    </dl>
+
+    <form asp-action="DeletePos" method="post">
+        <input type="hidden" asp-for="PosId" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

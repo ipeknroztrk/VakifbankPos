@@ -1,0 +1,149 @@
+﻿@model VakifbankPos.DAL.Entities.PosInventory
+
+@{
+    ViewData["Title"] = "POS Bilgileri Güncelleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container">
+        <h1 class="heading">POS Bilgileri Güncelleme</h1>
+
+        <h4>Pos Bilgileri</h4>
+        <hr />
+        <form asp-action="UpdatePos" asp-controller="Pos">
+
+            <input type="hidden" asp-for="PosId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="PosMember" class="control-label">Pos Üye</label>
+                <input asp-for="PosMember" class="form-control" />
+                <span asp-validation-for="PosMember" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Terminal" class="control-label">Terminal</label>
+                <input asp-for="Terminal" class="form-control" />
+                <span asp-validation-for="Terminal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerialNumber" class="control-label">Seri Numarası</label>
+                <input asp-for="SerialNumber" class="form-control" />
+                <span asp-validation-for="SerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastIssuedTo" class="control-label">En Son Kime Verildi</label>
+                <input asp-for="LastIssuedTo" class="form-control" />
+                <span asp-validation-for="LastIssuedTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueDate" class="control-label">Veriliş Tarihi</label>
+                <input asp-for="IssueDate" class="form-control" />
+                <span asp-validation-for="IssueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Environment" class="control-label">Ortam</label>
+                <input asp-for="Environment" class="form-control" />
+                <span asp-validation-for="Environment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendor" class="control-label">Vendor</label>
+                <input asp-for="Vendor" class="form-control" />
+                <span asp-validation-for="Vendor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label">Model</label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerBank" class="control-label">Sahip Banka</label>
+                <input asp-for="OwnerBank" class="form-control" />
+                <span asp-validation-for="OwnerBank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosType" class="control-label">Pos Tipi</label>
+                <input asp-for="PosType" class="form-control" />
+                <span asp-validation-for="PosType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <div>
+            <a asp-action="Index" class="btn btn-secondary">Geri Dön</a>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html><style>
+   
+    body {
+        background-color: #f7f7f7; 
+        color: #333; 
+    }
+
+    .container {
+        background-color: #fff;
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        padding: 20px;
+        margin: 20px auto;
+       
+    }
+
+    h1.heading {
+        color: #f1c40f;
+        text-align: center;
+    }
+
+    h4 {
+        color: #333; 
+    }
+
+  
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        color: #333;
+        font-weight: bold;
+    }
+
+    input.form-control {
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        padding: 10px;
+    }
+
+   
+    .text-danger {
+        color: #e74c3c; 
+    }
+
+   
+    .btn-primary {
+        background-color: #f1c40f;
+        border: none; 
+        color: #333; 
+    }
+
+        .btn-primary:hover {
+            background-color: #f39c12; 
+        }
+
+    .btn-secondary {
+        background-color: #333; 
+        border: none;
+        color: #fff; 
+    }
+
+        .btn-secondary:hover {
+            background-color: #000;
+        }
+</style>

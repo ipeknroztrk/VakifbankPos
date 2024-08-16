@@ -1,0 +1,141 @@
+/* _content/VakifbankPos/Views/Shared/_Layout.cshtml.rz.scp.css */
+.navbar[b-gcb9wzv0ay] {
+    background-color: #ffbb31; /* VakıfBank'ın sarı rengi */
+    width: 100%;
+}
+
+.navbar-brand[b-gcb9wzv0ay] {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-brand img[b-gcb9wzv0ay] {
+        max-height: 40px;
+        width: auto;
+    }
+
+    .navbar-brand .brand-name[b-gcb9wzv0ay] {
+        color: #fff; /* VakıfBank yazısının rengi */
+        font-weight: bold;
+        margin-left: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style:italic;
+    }
+
+.navbar-nav[b-gcb9wzv0ay] {
+    margin-left: auto;
+}
+
+    .navbar-nav .nav-link[b-gcb9wzv0ay] {
+        color: #000;
+        margin-right: 20px;
+    }
+
+        .navbar-nav .nav-link:hover[b-gcb9wzv0ay] {
+            color: #fcbf00;
+        }
+
+.navbar-light .navbar-nav .nav-link[b-gcb9wzv0ay] {
+    color: #000;
+    font-weight: bold;
+}
+
+    .navbar-light .navbar-nav .nav-link:hover[b-gcb9wzv0ay] {
+        color: #f5a623;
+    }
+
+.navbar-light .navbar-nav .btn-outline-warning[b-gcb9wzv0ay] {
+    color: #000;
+    border-color: #f5a623;
+    font-weight: bold;
+}
+
+    .navbar-light .navbar-nav .btn-outline-warning:hover[b-gcb9wzv0ay] {
+        color: #fff;
+        background-color: #f5a623;
+        border-color: #f5a623;
+    }
+
+.footer[b-gcb9wzv0ay] {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+
+
+.footer[b-gcb9wzv0ay] {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 40px 0;
+}
+
+.footer h2[b-gcb9wzv0ay] {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.footer p[b-gcb9wzv0ay] {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.footer a[b-gcb9wzv0ay] {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .footer a:hover[b-gcb9wzv0ay] {
+        text-decoration: underline;
+    }
+
+.footer-social a[b-gcb9wzv0ay] {
+    margin-right: 10px;
+    color: #333;
+}
+
+    .footer-social a:hover[b-gcb9wzv0ay] {
+        color: #007bff;
+    }
+
+.footer-newsletter .form[b-gcb9wzv0ay] {
+    display: flex;
+}
+
+    .footer-newsletter .form .form-control[b-gcb9wzv0ay] {
+        flex: 1;
+        border: 1px solid #ced4da;
+        border-radius: 0;
+    }
+
+    .footer-newsletter .form .btn[b-gcb9wzv0ay] {
+        border: none;
+        border-radius: 0;
+        margin-left: 10px;
+    }
+
+.copyright[b-gcb9wzv0ay] {
+    background-color: #e9ecef; /* Slightly darker gray */
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .copyright p[b-gcb9wzv0ay] {
+        margin: 0;
+        color: #666;
+    }
+
+    .copyright a[b-gcb9wzv0ay] {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .copyright a:hover[b-gcb9wzv0ay] {
+            text-decoration: underline;
+        }
+

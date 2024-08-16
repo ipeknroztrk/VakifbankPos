@@ -1,0 +1,85 @@
+﻿@model IEnumerable<VakifbankPos.DAL.Entities.PosAction>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5">
+        <h3 class="mb-4 text-center" style="color: #f1c40f; float:left">POS Ödünç-Teslim İşlemleri</h3>
+
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Terminal</th>
+                    <th>Verilen Kişi</th>
+                    <th>Veriliş Tarihi</th>
+                    <th>Geri Getirme Tarihi</th>
+                    <th>Teslim Edildi Mi?</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.PosInventory.SerialNumber</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Personel", new { id = item.PosReceiverId })" class="text-decoration-none link-color">
+                                @item.IssuedTo
+                            </a>
+                        </td>
+                        <td>@item.IssueDate.ToShortDateString()</td>
+                        <td>
+                            @(item.ReturnDate.HasValue
+                                ? item.ReturnDate.Value.ToShortDateString()
+                                : "Henüz dönmedi")
+                        </td>
+                        <td class="text-decoration-none link-color">@(item.Returned ? "Evet" : "Hayır")</td>
+                        <td>
+
+                            <a href="@Url.Action("DeletePosAction","PosAction", new { id = item.PosActionId })" class="btn btn-vakifbank-danger btn-sm" data-bs-toggle="tooltip" title="Sil">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                            @if (!item.Returned)
+                            {
+                                <a href="@Url.Action("ReturnPos", new { id = item.PosActionId })" class="btn btn-vakifbank-success btn-sm" data-bs-toggle="tooltip" title="Teslim Et">
+                                    <i class="bi bi-arrow-return-left"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script>$(function () {
+                $('[data-bs-toggle="tooltip"]').tooltip();
+            });</script>
+    </div>
+
+    <style>
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .table thead {
+            background-color: #333; 
+            color: #f1c40f;
+        }
+
+       
+       
+    </style>
+</body>

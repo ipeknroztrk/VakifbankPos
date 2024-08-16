@@ -1,0 +1,410 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/VakifbankPos.styles.css" asp-append-version="true" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-weight: bold;
+            background-color: #343a40;
+            border-radius: 4px;
+            width:300px;
+           
+        }
+
+            .sidebar a:hover,
+            .sidebar a.active {
+                color: #000;
+                background-color: #f1c40f;
+            }
+
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-logo-section {
+            flex: 1;
+            max-width: 200px;
+            margin-right: 20px;
+        }
+
+        .footer-logo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer-info-section,
+        .footer-services-section,
+        .footer-cards-section,
+        .footer-social-newsletter-section {
+            flex: 1;
+            margin: 0 20px;
+            min-width: 200px;
+        }
+
+            .footer-info-section h2,
+            .footer-services-section h2,
+            .footer-cards-section h2,
+            .footer-social-newsletter-section h2 {
+                margin-bottom: 15px;
+                font-size: 18px;
+                color: #333;
+            }
+
+            .footer-info-section p,
+            .footer-services-section p,
+            .footer-cards-section p {
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+
+            .footer-links a {
+                color: #333;
+                text-decoration: none;
+            }
+
+                .footer-links a:hover {
+                    text-decoration: underline;
+                }
+
+        .footer-social-newsletter-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-social {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+            .footer-social a {
+                display: inline-block;
+                margin-right: 10px;
+                color: #333;
+            }
+
+                .footer-social a:hover {
+                    color: #007bff;
+                }
+
+        .footer-newsletter .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 0;
+            margin-right: 10px;
+        }
+
+        .btn-custom-yellow {
+            background-color: #ffbb31;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+        }
+
+            .btn-custom-yellow:hover {
+                background-color: #e0a800;
+                color: #fff;
+            }
+
+        .copyright {
+            background-color: #e9ecef;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+            .copyright p {
+                margin: 0;
+                color: #666;
+            }
+
+            .copyright a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .copyright a:hover {
+                    text-decoration: underline;
+                }
+
+
+
+
+
+        .navbar {
+            background-color: #F5F5F5;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+
+        .sidebar {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            width: 250px;
+            height: calc(100vh - 56px);
+            background-color: #343a40;
+            color: #fff;
+            border-right: 1px solid #ddd;
+            padding: 15px;
+            overflow-y: auto;
+            z-index: 999;
+        }
+
+
+        .content {
+            margin-left: 250px;
+            margin-top: 56px;
+        }
+
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar-brand img {
+                max-height: 40px;
+                width: auto;
+                margin-right: 10px;
+            }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: black;
+        }
+
+
+        .btn-vakifbank-primary {
+            background-color: #f7e04b;
+            color: #000000;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .btn-vakifbank-info {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .btn-vakifbank-warning {
+            background-color: #f1c40f;
+            color: #000000;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .btn-vakifbank-danger {
+            background-color: #e74c3c;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .btn-vakifbank-success {
+            background-color: #7f8c8d;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+            .btn-vakifbank-primary:hover,
+            .btn-vakifbank-info:hover,
+            .btn-vakifbank-warning:hover,
+            .btn-vakifbank-danger:hover,
+            .btn-vakifbank-success:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-yellow border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="https://www.vakifbank.com.tr/Templates/Default/assets/img/footer-logo.svg" alt="VakıfBank Logo" style="height:30px; width:auto;" />
+
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="sidebar">
+        <a class="nav-link" href="/Pos/Index">Pos Cihazları </a>
+
+        <a class="nav-link" href="/Personel/Index">Personeller </a>
+        <a class="nav-link" href="/PosAction/Index">Pos İşlemleri </a>
+        <a class="nav-link" href="/Pos/DefectiveList">Arızalı Cihazlar</a>
+
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-logo-section">
+                    <img src="https://www.vakifbank.com.tr/Templates/Default/assets/img/footer-logo.svg" alt="VakıfBank Logo" class="footer-logo" />
+                </div>
+
+                <div class="footer-info-section">
+                    <h2>İletişim ve Bilgiler</h2>
+                    <p><strong>0850 222 0 724</strong></p>
+                    <p>&copy; 2024 Türkiye Vakıflar Bankası T.A.O.</p>
+                    <ul class="footer-links">
+                        <li><a href="#">Bilgi Toplumu Hizmetleri</a></li>
+                        <li><a href="#">Zaman Aşımı Listeleri</a></li>
+                        <li><a href="#">Gizlilik Koşulları ve Kişisel Verilerin Korunması</a></li>
+                        <li><a href="#">Hesaplama Araçları</a></li>
+                        <li><a href="#">Başvurular</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-services-section">
+                    <h2>Kampanyalar ve Hizmetler</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">Kampanyalar</a></li>
+                        <li><a href="#">Yardım Merkezi</a></li>
+                        <li><a href="#">Şube ve ATM'ler</a></li>
+                        <li><a href="#">Dijital Bankacılık</a></li>
+                        <li><a href="#">Engelsiz Bankacılık</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-cards-section">
+                    <h2>Kartlar ve Ek Hizmetler</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">VakıfKart</a></li>
+                        <li><a href="#">Like Card</a></li>
+                        <li><a href="#">VakıfBank POS</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-newsletter-section">
+                    <h2>Sosyal Medya</h2>
+                    <div class="footer-social">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                    <h2>Abonelik</h2>
+                    <form class="footer-newsletter">
+                        <input type="email" class="form-control" placeholder="E-posta adresinizi girin" />
+                        <button type="submit" class="btn btn-custom-yellow">Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Türkiye Vakıflar Bankası T.A.O. Tüm hakları saklıdır. <a href="#">Gizlilik Politikası</a> | <a href="#">Kullanım Şartları</a></p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
